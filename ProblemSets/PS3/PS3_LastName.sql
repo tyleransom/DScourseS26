@@ -30,7 +30,7 @@ CREATE TABLE insurance (
 .import FL_insurance_sample.csv insurance
 
 -- Remove the header row inserted during import
-DELETE FROM insurance WHERE policyID = 'policyID';
+DELETE FROM insurance WHERE policyID IS NULL OR policyID = 'policyID';
 
 .print ' '
 .print 'First 10 rows'
